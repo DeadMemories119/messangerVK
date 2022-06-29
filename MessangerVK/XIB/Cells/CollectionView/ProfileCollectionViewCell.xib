@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProfileCollectionViewCell" customModule="MessangerVK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="227"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="419" height="227"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R1Q-7E-VSu">
+                        <rect key="frame" x="161.5" y="44" width="96" height="96"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="R1Q-7E-VSu" secondAttribute="height" multiplier="1:1" id="jGc-Nz-VRS"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xb2-pT-Oe6" customClass="LikeControlView" customModule="MessangerVK" customModuleProvider="target">
+                        <rect key="frame" x="161.5" y="143" width="96" height="40"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="oUr-C6-gCz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Xb2-pT-Oe6" firstAttribute="top" secondItem="R1Q-7E-VSu" secondAttribute="bottom" constant="3" id="A8l-pd-8z2"/>
+                <constraint firstItem="R1Q-7E-VSu" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="AUi-Hn-QHY"/>
+                <constraint firstItem="Xb2-pT-Oe6" firstAttribute="leading" secondItem="R1Q-7E-VSu" secondAttribute="leading" id="D6M-ud-gJQ"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="Xb2-pT-Oe6" secondAttribute="bottom" constant="10" id="QdZ-VL-vas"/>
+                <constraint firstItem="R1Q-7E-VSu" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="lcp-74-NcI"/>
+                <constraint firstItem="Xb2-pT-Oe6" firstAttribute="trailing" secondItem="R1Q-7E-VSu" secondAttribute="trailing" id="ypN-0T-Rdz"/>
+            </constraints>
+            <size key="customSize" width="419" height="227"/>
+            <connections>
+                <outlet property="profilePictureView" destination="R1Q-7E-VSu" id="QpI-il-tlt"/>
+            </connections>
+            <point key="canvasLocation" x="215.21739130434784" y="126.22767857142857"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

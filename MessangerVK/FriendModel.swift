@@ -8,6 +8,7 @@
 
 struct Friend {
     var name: String?
+    var isPressed = false
     var avatar: String?
     var album = [String]()
 }
