@@ -17,8 +17,8 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
 
    
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let communities = allCommunities[indexPath.item]
-    NotificationCenter.default.post(name: NSNotification.Name("pressToCommunity"), object: communities)
+//    let communities = allCommunities[indexPath.item]
+//    NotificationCenter.default.post(name: NSNotification.Name("pressToCommunity"), object: communities)
    
 }
 

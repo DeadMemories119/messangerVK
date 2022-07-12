@@ -10,6 +10,7 @@ import UIKit
 class ProfileCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var profilePictureView: UIImageView!
+    @IBOutlet weak var likeControlView: LikeControlView!
     
     
     
@@ -22,10 +23,12 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         profilePictureView.image = nil
+        likeControlView.configure(isLikePressed: false, counter: 0)
     }
     
-    func configure(image: UIImage?) {
+    func configure(image: UIImage?, isLiked: Bool, likeCounter: Int) {
         profilePictureView.image = image
+        likeControlView.configure(isLikePressed: isLiked, counter: likeCounter)
     }
 
 }

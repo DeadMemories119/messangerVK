@@ -43,6 +43,7 @@
             </constraints>
             <size key="customSize" width="419" height="227"/>
             <connections>
+                <outlet property="likeControlView" destination="Xb2-pT-Oe6" id="UAa-lQ-2Z7"/>
                 <outlet property="profilePictureView" destination="R1Q-7E-VSu" id="QpI-il-tlt"/>
             </connections>
             <point key="canvasLocation" x="215.21739130434784" y="126.22767857142857"/>

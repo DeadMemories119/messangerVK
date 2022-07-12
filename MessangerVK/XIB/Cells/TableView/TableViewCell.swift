@@ -16,16 +16,14 @@ class TableViewCell: UITableViewCell {
     
     var shadowColor = #colorLiteral(red: 0.340602845, green: 0.1235674396, blue: 0.5884564519, alpha: 1)
     
+    var closure :(() -> Void)?
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         avatar.image = nil
-//        nameLabel = nil
+        closure = nil
     }
     
-    func configure(image: UIImage?, name: String? ) {
-        avatar.image = image
-        nameLabel.text = name
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,10 +42,33 @@ class TableViewCell: UITableViewCell {
         avatar.layer.cornerRadius = avatar.bounds.width/2
     }
     
+    func configure(image: UIImage?, name: String?, closure: @escaping () -> Void) {
+        avatar.image = image
+        nameLabel.text = name
+        self.closure = closure
+    }
+    
     func configure(_ community: Community) {
         avatar.image = UIImage(named: community.avatar)
         nameLabel.text = community.name
     }
+    
+    
+    @IBAction func pressedViewAnimationButton(_ sender: UIButton) {
 
+        UIView.animate(withDuration: 0.08,
+                       delay: 0,
+                       options: [.autoreverse, .beginFromCurrentState]) { [weak self] in
+            self?.avatar.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            self?.shadowView.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        } completion: { [weak self] _ in
+            self?.closure?()
+            self?.avatar.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self?.shadowView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+
+        
+    }
+    
     
 }

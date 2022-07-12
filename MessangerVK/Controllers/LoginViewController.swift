@@ -81,17 +81,34 @@ class LoginViewController: UIViewController {
     
     func firstAnimation() {
         
-        let positionAnimation = CABasicAnimation(keyPath: "position.y")
-        positionAnimation.fromValue = 100
-        positionAnimation.toValue = self.loginView.frame.origin
-        positionAnimation.duration = 0.5
+//        let positionAnimation = CABasicAnimation(keyPath: "position.y")
+//        positionAnimation.fromValue = -self.loginView.bounds.height/1.5
+//        positionAnimation.toValue = self.loginView.frame.origin
+//        positionAnimation.duration = 0.5
+//
+//        let fadeAnimation = CABasicAnimation(keyPath: "opacity")
+//        fadeAnimation.fromValue = 0
+//        fadeAnimation.toValue = 1
+//        fadeAnimation.duration = 0.3
+//        self.loginView.layer.add(fadeAnimation, forKey: nil)
+//        self.loginView.layer.add(positionAnimation, forKey: nil)
         
-        let fadeAnimation = CABasicAnimation(keyPath: "opacity")
-        fadeAnimation.fromValue = 0
-        fadeAnimation.toValue = 1
-        fadeAnimation.duration = 1
-        self.loginView.layer.add(fadeAnimation, forKey: nil)
-        self.loginView.layer.add(positionAnimation, forKey: nil)
+        
+        
+        let positionAnimation = CABasicAnimation(keyPath: "position.y")
+        positionAnimation.fromValue = -self.loginView.frame.height/1.5
+        positionAnimation.toValue = self.loginView.frame.origin
+        
+        let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+        opacityAnimation.fromValue = 0.1
+        opacityAnimation.toValue = 1
+        
+        let animationGroup = CAAnimationGroup()
+        animationGroup.animations = [positionAnimation, opacityAnimation]
+        animationGroup.duration = 0.5
+        
+        self.loginView.layer.add(animationGroup, forKey: nil)
+        
     }
     
     
@@ -100,7 +117,7 @@ class LoginViewController: UIViewController {
         UIView.animate(withDuration: 0.5) { [weak self] in
             guard let self = self else {return}
             self.loginView.alpha = 0
-            self.loginView.transform = CGAffineTransform(translationX: 0, y: -100)
+            self.loginView.transform = CGAffineTransform(translationX: 0, y: -self.loginView.bounds.height/2)
         } completion: { isSucceed in
             if isSucceed {
                 self.performSegue(withIdentifier: self.toTabBarControllerSegue, sender: nil)

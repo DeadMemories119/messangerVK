@@ -161,21 +161,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="03U-8L-ouT">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="139" width="414" height="674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zGw-7I-RUe">
+                                <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Nsd-ci-p6F"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81850304192647183" green="0.71791127865728799" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="Nsd-ci-p6F" firstAttribute="trailing" secondItem="zGw-7I-RUe" secondAttribute="trailing" id="6CR-mC-Rc2"/>
                             <constraint firstItem="03U-8L-ouT" firstAttribute="leading" secondItem="Nsd-ci-p6F" secondAttribute="leading" id="8qK-51-ZcK"/>
-                            <constraint firstItem="03U-8L-ouT" firstAttribute="top" secondItem="Nsd-ci-p6F" secondAttribute="top" id="Nwy-zn-0Lc"/>
                             <constraint firstItem="Nsd-ci-p6F" firstAttribute="trailing" secondItem="03U-8L-ouT" secondAttribute="trailing" id="Pn3-2H-cf3"/>
+                            <constraint firstItem="zGw-7I-RUe" firstAttribute="bottom" secondItem="03U-8L-ouT" secondAttribute="top" id="T2s-PL-5sJ"/>
+                            <constraint firstItem="zGw-7I-RUe" firstAttribute="top" secondItem="Nsd-ci-p6F" secondAttribute="top" id="WOc-Zh-nj1"/>
+                            <constraint firstItem="zGw-7I-RUe" firstAttribute="leading" secondItem="Nsd-ci-p6F" secondAttribute="leading" id="v2t-Bg-IRI"/>
                             <constraint firstItem="Nsd-ci-p6F" firstAttribute="bottom" secondItem="03U-8L-ouT" secondAttribute="bottom" id="xg1-Hm-u8O"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="a26-PU-bIW"/>
                     <connections>
+                        <outlet property="searchBar" destination="zGw-7I-RUe" id="gp6-9H-d1k"/>
                         <outlet property="tableView" destination="03U-8L-ouT" id="Zy7-zd-Hdl"/>
                         <segue destination="LoE-sK-GyF" kind="show" identifier="fromFriendListToProfileSegue" id="Ahh-a4-x9s"/>
                     </connections>

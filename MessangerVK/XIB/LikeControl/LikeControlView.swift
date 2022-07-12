@@ -43,19 +43,34 @@ class LikeControlView: UIView {
         likeCounterLabel.text = String(likeCounter)
     }
     
-    @IBAction func pressLikeButton(_ sender: UIButton) {
-        isPressed = !isPressed
+    
+    func configure(isLikePressed: Bool, counter: Int) {
+        self.likeCounter = counter
+        self.isPressed = isLikePressed
+        likeState()
+        
+    }
+    
+    func likeState() {
         
         if isPressed {
-            likeCounter += 1
-            heartImageView.image = UIImage(systemName: "heart.fill")
+            heartImageView.image = UIImage(named: "liked")
         } else {
-            likeCounter -= 1
-            heartImageView.image = UIImage(systemName: "heart")
+            heartImageView.image = UIImage(named: "not liked")
         }
         
-        
         likeCounterLabel.text = "Likes: " + String(likeCounter)
+    }
+    
+    @IBAction func pressLikeButton(_ sender: UIButton) {
+        isPressed = !isPressed
+       
+        if isPressed {
+            likeCounter += 1
+        } else {
+            likeCounter -= 1
+        }
+        likeState()
     }
     
     

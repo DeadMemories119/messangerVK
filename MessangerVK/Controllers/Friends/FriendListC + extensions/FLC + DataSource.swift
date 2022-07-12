@@ -17,7 +17,14 @@ extension FriendListController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: friendListTableViewCellReuseIdentifier, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         
         let friend = myFriends[indexPath.row]
-        cell.configure(image: UIImage(named: friend.avatar!), name: friend.name)
+        cell.configure(image: UIImage(named: friend.avatar!), name: friend.name, closure: { [weak self] in
+            guard let self = self else {return}
+            
+            let album = self.myFriends[indexPath.row].album
+            self.performSegue(withIdentifier: self.fromFriendListToProfileSegue, sender: album)
+            
+            
+        })
         return cell
     }
     

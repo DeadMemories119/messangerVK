@@ -18,6 +18,9 @@ extension CommunitiesSearchController: UITableViewDataSource {
        
          guard let cell = tableView.dequeueReusableCell(withIdentifier: allCommunitiesTableViewCellReuseIdentifier, for: indexPath) as? TableViewCell else { return UITableViewCell() }
          cell.configure(self.allCommunities[indexPath.row])
+         
+         let communities = allCommunities[indexPath.item]
+         NotificationCenter.default.post(name: NSNotification.Name("pressToCommunity"), object: communities)
     
        return cell
     }

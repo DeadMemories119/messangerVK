@@ -18,8 +18,9 @@ extension ProfileCollectionController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: profileCollectionViewCellReuseIdentifier, for: indexPath) as! ProfileCollectionViewCell
-        
-        cell.configure(image: UIImage(named: self.albumArray[indexPath.item]))
+    
+        let image = UIImage(named: self.albumArray[indexPath.item])
+        cell.configure(image: image, isLiked: false, likeCounter: 0)
         
         return cell
     }

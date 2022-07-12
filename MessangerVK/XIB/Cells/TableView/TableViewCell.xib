@@ -36,6 +36,13 @@
                         <color key="textColor" red="0.15787301899512771" green="0.15780394063490116" blue="0.38354245580808077" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XU2-5o-L61">
+                        <rect key="frame" x="0.0" y="0.0" width="392" height="137"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <connections>
+                            <action selector="pressedViewAnimationButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oDJ-GM-dlz"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ls1-Ui-8rd" secondAttribute="trailing" constant="16" id="Lwd-rc-poS"/>
@@ -52,6 +59,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <constraints>
+                <constraint firstItem="XU2-5o-L61" firstAttribute="width" secondItem="njF-e1-oar" secondAttribute="width" id="79z-N5-dbf"/>
+                <constraint firstItem="XU2-5o-L61" firstAttribute="centerY" secondItem="njF-e1-oar" secondAttribute="centerY" id="VH7-SK-M0n"/>
+                <constraint firstItem="XU2-5o-L61" firstAttribute="height" secondItem="njF-e1-oar" secondAttribute="height" id="vhR-eI-gBE"/>
+                <constraint firstItem="XU2-5o-L61" firstAttribute="centerX" secondItem="njF-e1-oar" secondAttribute="centerX" id="zrk-KM-T9N"/>
+            </constraints>
             <connections>
                 <outlet property="avatar" destination="oPZ-HC-qR1" id="UIU-hu-mvf"/>
                 <outlet property="nameLabel" destination="ls1-Ui-8rd" id="NWs-Vc-8Ma"/>
